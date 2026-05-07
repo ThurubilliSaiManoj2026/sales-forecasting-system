@@ -5,3 +5,7 @@ __pycache__/
 trained_models/*.pkl
 trained_models/*.h5
 training.log
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
