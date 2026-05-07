@@ -1,6 +1,6 @@
 # Sales Forecasting System
 
-An end-to-end, production-ready time series forecasting system that trains four algorithms per US state, automatically selects the best-performing model, and serves 8-week sales predictions via a REST API.
+An end-to-end, production ready time series forecasting system that trains four algorithms per US state, automatically selects the best performing model, and serves 8 week sales predictions via a REST API.
 
 ---
 
@@ -56,7 +56,7 @@ The raw dataset contains 8,084 rows across 43 US states. Each state has 188 data
 
 ## Feature Engineering Details
 
-All features are engineered on the weekly-resampled data. Lag features at 1 week, 7 weeks, and 30 weeks encode recent momentum, medium-term cyclicality, and long-term seasonal patterns respectively. Rolling mean and standard deviation over 4-week and 8-week windows capture the local trend level and volatility. Sine/cosine encoding of week-of-year and month ensures seasonal features are cyclically smooth (avoiding the artificial discontinuity between December and January in raw integer encoding). A US federal holiday flag marks any week containing a major holiday.
+All features are engineered on the weekly-resampled data. Lag features at 1 week, 7 weeks, and 30 weeks encode recent momentum, medium term cyclicality, and long-term seasonal patterns respectively. Rolling mean and standard deviation over 4-week and 8-week windows capture the local trend level and volatility. Sine/cosine encoding of week-of-year and month ensures seasonal features are cyclically smooth (avoiding the artificial discontinuity between December and January in raw integer encoding). A US federal holiday flag marks any week containing a major holiday.
 
 **Critical note:** all rolling and lag features are computed using `shift(1)` before the rolling operation. This means every feature value at row `t` is derived exclusively from data before time `t`, ensuring zero data leakage across the train/validation split.
 
