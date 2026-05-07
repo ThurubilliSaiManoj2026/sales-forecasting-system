@@ -144,7 +144,7 @@ Example response:
 ```json
 {
   "state": "California",
-  "best_model": "xgboost",
+  "best_model": "prophet",
   "forecast_dates": ["2023-12-10", "2023-12-17", ..., "2024-01-28"],
   "forecast_values": [1812345678.0, 1798234512.0, "..."],
   "unit": "USD"
