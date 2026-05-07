@@ -17,16 +17,16 @@ Raw Excel Data
       │
       ▼
  Preprocessing          ← Parses mixed date formats, resamples irregular data
-      │                    to weekly frequency, fills gaps with interpolation
+      │                   to weekly frequency, fills gaps with interpolation
       ▼
 Feature Engineering     ← Creates lag features (t-1, t-7, t-30 weeks),
-      │                    rolling mean/std, calendar features, holiday flags
+      │                   rolling mean/std, calendar features, holiday flags
       ▼
  4 Model Training       ← Trains ARIMA, Prophet, XGBoost, LSTM per state
       │
       ▼
  Model Selection        ← Evaluates all 4 on 8-week validation split (no leakage)
-      │                    Selects winner by lowest RMSE
+      │                   Selects winner by lowest RMSE
       ▼
 Results JSON            ← Stores forecasts + metrics for all 43 states
       │
