@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+trained_models/*.pkl
+trained_models/*.h5
+training.log
