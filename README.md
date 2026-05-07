@@ -16,22 +16,22 @@ Forecast the next 8 weeks of beverage sales for each of 43 US states using ~5 ye
 Raw Excel Data
       │
       ▼
- Preprocessing          ← Parses mixed date formats, resamples irregular data
+Preprocessing           ← Parses mixed date formats, resamples irregular data
       │                   to weekly frequency, fills gaps with interpolation
       ▼
 Feature Engineering     ← Creates lag features (t-1, t-7, t-30 weeks),
       │                   rolling mean/std, calendar features, holiday flags
       ▼
- 4 Model Training       ← Trains ARIMA, Prophet, XGBoost, LSTM per state
+4 Model Training        ← Trains ARIMA, Prophet, XGBoost, LSTM per state
       │
       ▼
- Model Selection        ← Evaluates all 4 on 8-week validation split (no leakage)
+Model Selection         ← Evaluates all 4 on 8-week validation split (no leakage)
       │                   Selects winner by lowest RMSE
       ▼
 Results JSON            ← Stores forecasts + metrics for all 43 states
       │
       ▼
-  FastAPI REST API       ← Serves predictions at localhost:8000
+FastAPI REST API        ← Serves predictions at localhost:8000
 ```
 
 ---
